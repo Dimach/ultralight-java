@@ -139,7 +139,7 @@ public class TestApplication {
     public void run() {
         // Make the window's OpenGL context the current one
         glfwMakeContextCurrent(window);
-        glfwSwapInterval(1);
+        glfwSwapInterval(0);
 
         // Initialize OpenGL capabilities
         GL.createCapabilities();
@@ -174,7 +174,7 @@ public class TestApplication {
         // Set opaque black as the clear color
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
-        webController.loadURL("file:///test.html");
+        webController.loadURL("http://localhost:8080/");
 
         double lastTime = glfwGetTime();
         int frameCount = 0;
@@ -199,6 +199,7 @@ public class TestApplication {
             if(currentTime - lastTime >= 1.0) {
                 double msPerFrame = 1000.0 / ((double) frameCount);
                 glfwSetWindowTitle(window, "Ultralight GLFW (" + msPerFrame + " | " + frameCount + ")");
+                System.out.printf("%s ms/frame   |   %d FPS\n", msPerFrame, frameCount);
                 frameCount = 0;
                 lastTime += 1.0;
             }

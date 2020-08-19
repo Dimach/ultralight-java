@@ -454,6 +454,34 @@ namespace ultralight_java {
             /**
              * The java class itself
              */
+             jclass clazz;
+
+             jmethodID begin_synchronize_method;
+             jmethodID end_synchronize_method;
+             jmethodID next_texture_id_method;
+             jmethodID create_texture_method;
+             jmethodID update_texture_method;
+             jmethodID bind_texture_method;
+             jmethodID destroy_texture_method;
+             jmethodID next_render_buffer_id_method;
+             jmethodID create_render_buffer_method;
+             jmethodID bind_render_buffer_method;
+             jmethodID clear_render_buffer_method;
+             jmethodID destroy_render_buffer_method;
+             jmethodID next_geometry_id_method;
+             jmethodID create_geometry_method;
+             jmethodID update_geometry_method;
+             jmethodID draw_geometry_method;
+             jmethodID destroy_geometry_method;
+             jmethodID update_command_list_method;
+             jmethodID has_commands_pending_method;
+             jmethodID draw_command_list_method;
+        } ultralight_gpu_driver;
+
+        struct {
+            /**
+             * The java class itself
+             */
             jclass clazz;
 
             jmethodID clear_method;
