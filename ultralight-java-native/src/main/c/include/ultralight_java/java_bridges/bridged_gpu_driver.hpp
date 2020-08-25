@@ -31,9 +31,6 @@ namespace ultralight_java {
         void UpdateTexture(uint32_t texture_id,
                            ultralight::Ref<ultralight::Bitmap> bitmap) final;
 
-        void BindTexture(uint8_t texture_unit,
-                         uint32_t texture_id);
-
         void DestroyTexture(uint32_t texture_id) final;
 
         uint32_t NextRenderBufferId() final;
@@ -41,24 +38,22 @@ namespace ultralight_java {
         void CreateRenderBuffer(uint32_t render_buffer_id,
                                 const ultralight::RenderBuffer& buffer) final;
 
-        void BindRenderBuffer(uint32_t render_buffer_id);
+        void DestroyRenderBuffer(uint32_t render_buffer_id) final;
+
+        uint32_t NextGeometryId() final;
+
+        void CreateGeometry(uint32_t geometry_id,
+                            const ultralight::VertexBuffer& vertices,
+                            const ultralight::IndexBuffer& indices) final;
 
         void UpdateGeometry(uint32_t geometry_id,
                             const ultralight::VertexBuffer& vertices,
                             const ultralight::IndexBuffer& indices) final;
 
-        void DrawGeometry(uint32_t geometry_id,
-                          uint32_t indices_count,
-                          uint32_t indices_offset,
-                          const ultralight::GPUState& state);
-
         void DestroyGeometry(uint32_t geometry_id) final;
 
         void UpdateCommandList(const ultralight::CommandList& list) final;
 
-        bool HasCommandsPending();
-
-        void DrawCommandList();
     };
 
 }
