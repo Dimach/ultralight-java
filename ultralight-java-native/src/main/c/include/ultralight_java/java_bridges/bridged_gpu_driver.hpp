@@ -1,12 +1,6 @@
 //
 // Created by leo on 18.08.20.
 //
-
-#ifndef ULTRALIGHT_JAVA_BRIDGED_GPU_DRIVER_HPP
-#define ULTRALIGHT_JAVA_BRIDGED_GPU_DRIVER_HPP
-
-#endif // ULTRALIGHT_JAVA_BRIDGED_GPU_DRIVER_HPP
-
 #pragma once
 
 #include <Ultralight/Ultralight.h>

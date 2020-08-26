@@ -236,6 +236,20 @@ namespace ultralight_java {
             /**
              * The java class itself
              */
+             jclass clazz;
+
+             /**
+              * Constructor
+              */
+              jmethodID constructor;
+
+              jmethodID add_method;
+        } ultralight_commandlist;
+
+        struct {
+            /**
+             * The java class itself
+             */
             jclass clazz;
 
             /**

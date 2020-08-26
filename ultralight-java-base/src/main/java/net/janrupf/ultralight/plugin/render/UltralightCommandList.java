@@ -1,4 +1,8 @@
 package net.janrupf.ultralight.plugin.render;
 
-public class UltralightCommandList {
-}
+import net.janrupf.ultralight.annotation.NativeType;
+
+import java.util.ArrayList;
+
+@NativeType("ultralight::CommandList")
+public class UltralightCommandList extends ArrayList<UltralightCommand> {}

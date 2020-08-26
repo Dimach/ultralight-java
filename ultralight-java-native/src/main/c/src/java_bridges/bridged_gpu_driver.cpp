@@ -102,7 +102,12 @@ namespace ultralight_java {
     }
 
     void BridgedGPUDriver::DestroyRenderBuffer(uint32_t render_buffer_id) {
+        TemporaryJNI env;
 
+        env->CallVoidMethod(reference,
+                            runtime.ultralight_gpu_driver.destroy_render_buffer_method,
+                            static_cast<jlong>(render_buffer_id));
+        ProxiedJavaException::throw_if_any(env);
     }
 
     uint32_t BridgedGPUDriver::NextGeometryId() {
